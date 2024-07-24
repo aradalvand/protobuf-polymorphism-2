@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "PolymorphicProtobuf";
+
+message Event {
+	oneof Payload {
+		FolanEvent FolanEvent = 1;
+		BisarEvent BisarEvent = 2;
+		BahmanEvent BahmanEvent = 3;
+	}
+}
+
+message FolanEvent {
+	string foo = 1;
+}
+message BisarEvent {
+	string bar = 1;
+}
+message BahmanEvent {
+	string buzz = 1;
+}
